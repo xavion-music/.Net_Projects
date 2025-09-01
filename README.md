@@ -1,92 +1,89 @@
-# .Net_Projects
+# 🧠 .NET Projects – Palak Chaudhary
 
-This repository contains all my .NET practice and assignment projects developed using **Visual Studio 2022**. These projects cover multiple .NET technologies like:
-
-- Console Applications
-- WPF (Windows Presentation Foundation)
-- Razor Pages (ASP.NET Core Web Apps)
-- MAUI (Multi-platform App UI)
-- Inheritance, Generics, OOP, and more
-
-Each folder represents a different weekly task, project, or learning objective from my Computer Programming course.
+This repository contains a variety of .NET projects I created while learning C#, WPF, Razor Pages, and more. Each folder is a different project focused on specific concepts.
 
 ---
 
-## 📁 Project List
+## ✅ Project List & Descriptions
 
-### ✅ Week1ConsoleApp
-- A basic C# console app to get started with input/output, variables, loops, and conditionals.
+### 📱 MAUI-App-1  
+A cross-platform .NET MAUI app exploring mobile UI and event handling.
 
-### ✅ Week2
-- More practice with console apps, methods, arrays, and basic error handling.
+### 📁 MTPalakChaudhary  
+Midterm project using WPF (Windows Presentation Foundation) – includes player stats with inheritance, polymorphism, and generics.
 
-### ✅ A1PalakChaudhary
-- Assignment 1: A structured console app applying all the basics like loops, methods, user input, and output formatting.
+### 🧪 PalakFinalExamAndQuiz4  
+Final exam and quiz solutions. Likely a mix of Razor Pages or console-based solutions demonstrating file I/O and database connectivity.
 
-### ✅ A2PalakChaudhary
-- Assignment 2: More advanced console-based logic using object-oriented principles like classes and objects.
+### 🧑‍🔧 Practice  
+Practice projects covering core C# skills such as exception handling, arrays, functions, LINQ, etc.
 
-### ✅ MTPalakChaudhary
-- Midterm Project: A full console application using classes, polymorphism, inheritance, and file handling.
+### 🚗 RazorPagesEmployeeCars  
+A Razor Pages project that manages Employees and Cars with Create/Read/Update/Delete (CRUD) features.
 
-### ✅ S25W3IntroToInheritance
-- A WPF project focused on learning inheritance and object-oriented design with UI components.
+### 🎬 RazorPagesMovie  
+Movie management app built using Razor Pages with CRUD operations.
 
-### ✅ S25W4IntroToGenerics
-- A WPF project that introduces how to use generics in C# and how to apply them to WPF app development.
+### 🏫 S25W3IntroToInheritance  
+Demonstrates object-oriented principles of **inheritance** in C#.
 
-### ✅ S25W5IntroToWPF
-- A beginner WPF desktop application showing how to use layout panels, labels, buttons, and input controls.
+### 🧬 S25W4IntroToGenerics  
+Covers **generic classes and methods** for type-safe reusable code.
 
-### ✅ S25W6MidtermReview
-- A collection of WPF exercises to revise midterm concepts like inheritance, polymorphism, and event handling.
+### 🎨 S25W5IntroToWPF  
+Basic WPF (Windows Presentation Foundation) UI examples — buttons, labels, layout, event handling.
 
-### ✅ S25W6MidtermReviewWPF
-- Similar to the previous one but focused only on WPF with user interaction and control updates.
+### 📝 S25W6MidtermReview  
+Console-based or WPF app containing midterm review questions, concepts, or quizzes.
 
-### ✅ Practice
-- Miscellaneous C# practice apps not tied to a specific week or assignment. Useful for learning LINQ, collections, arrays, etc.
+### 💻 S25W6MidtermReviewWPF  
+Same midterm content, but specifically using WPF instead of console.
 
-### ✅ RazorPagesEmployeeCars
-- A Razor Pages (ASP.NET Core) web app for managing car/employee data. Demonstrates server-side form handling, CRUD operations, and page navigation.
+### 🧮 Week1ConsoleApp  
+A basic C# console app covering variables, loops, conditionals, and console input/output.
 
-### ✅ RazorPagesMovie
-- A Razor Pages CRUD app to manage a movie database using Entity Framework Core with SQL backend.
+### 🗃️ Week2  
+Intermediate exercises — possibly with file reading/writing, lists, or data validation.
 
-### ✅ MAUI-App
-### ✅ MAUI-App-1
-- Initial mobile app development using MAUI (Multi-platform App UI). These apps are aimed at building cross-platform mobile UIs with C#.
+### 📁 RazorPagesEmployeeCars-Copy  
+Backup or modified version of the `RazorPagesEmployeeCars` project.
 
----
+### 📁 MAUI-App-Copy  
+Copy of the MAUI project — possibly an alternate or newer version.
 
-## 🛠️ Tools Used
+### 📁 MAUI-App (2)Working  
+Another active version of your MAUI project in progress.
 
-- **IDE:** Visual Studio 2022
-- **Language:** C#
-- **Frameworks:** .NET 6/7, WPF, ASP.NET Core, MAUI
-- **Others:** Git, GitHub, XAML
+### 📁 MAUI-App (3)  
+Updated version with bug fixes or additional features.
 
----
+### 📁 MAUI-App (4)  
+One more iteration of the MAUI app — version tracking for your improvements.
 
-## 🎯 Purpose
-
-The main goal of this repository is to:
-- Practice and improve my C# and .NET skills
-- Learn different application types (desktop, web, mobile)
-- Understand core programming concepts like OOP, events, generics, LINQ, and exception handling
-- Apply weekly learnings from my Computer Programming course at Sheridan College
+### 📁 MTPalakChaudhary-Copy  
+Backup copy of the midterm project.
 
 ---
 
-## 📌 Notes
+## 🚫 Excluded Files
 
-- Some projects may have been zipped or excluded from GitHub due to large file size restrictions.
-- Only educational and practice-based work is included. No confidential or commercial code here.
+- `.zip` files are **not tracked** to avoid exceeding GitHub's 100MB file limit.
+- `.gitignore` ensures build files, binaries, and unnecessary folders are excluded from the repo.
 
 ---
 
-## 📧 Contact
+## 🛠️ Tech Stack
 
-Created with ❤️ by **Palak Chaudhary**  
-If you have any questions or suggestions, feel free to connect with me on GitHub.
+- C# (.NET 7+)
+- Razor Pages (ASP.NET Core)
+- WPF (XAML + C#)
+- .NET MAUI (Mobile)
+- Visual Studio 2022
+
+---
+
+## 👨‍💻 Author
+
+**Palak Chaudhary**  
+[GitHub Profile](https://github.com/xavion-music)
 
