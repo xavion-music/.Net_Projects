@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Notes.Models"
+             x:Class="Notes.Views.AllNotesPage"
+             Title="Notes">
+    <ContentPage.Content>
+        <VerticalStackLayout>
+            <CollectionView ItemsSource="{Binding Notes}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Note">
+                        <Border Style="{StaticResource NoteCardBorder}">
+                            <VerticalStackLayout>
+                                <Label Style="{StaticResource NoteCardTitle}" Text="{Binding Title}" />
+                                <Label Style="{StaticResource NoteCardDate}" Text="{Binding Date, StringFormat='{}{0:MMM dd, yyyy h:mm tt}'}"/>
+                                <Border StrokeShape="RoundRectangle 16" Margin="0,0,0,10">
+                                    <Image Source="{Binding PhotoPath}" Aspect="AspectFill" HeightRequest="110" WidthRequest="110"/>
+                                </Border>
+                                <Label Style="{StaticResource NoteCardText}" Text="{Binding Text}" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Add Note" Command="{Binding AddNoteCommand}" 
+                    BackgroundColor="{StaticResource PastelBlue}" 
+                    TextColor="Black"
+                    Margin="24,16"
+                    FontFamily="PoppinsBold"
+                    CornerRadius="18"
+                    HeightRequest="56"/>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

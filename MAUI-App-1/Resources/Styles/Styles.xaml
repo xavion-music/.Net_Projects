@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="PastelPurpleBrush" Color="{StaticResource PastelPurple}" />
+    <SolidColorBrush x:Key="PastelPinkBrush" Color="{StaticResource PastelPink}" />
+    <SolidColorBrush x:Key="PastelLightPinkBrush" Color="{StaticResource PastelLightPink}" />
+    <SolidColorBrush x:Key="PastelLightBlueBrush" Color="{StaticResource PastelLightBlue}" />
+    <SolidColorBrush x:Key="PastelBlueBrush" Color="{StaticResource PastelBlue}" />
+    <SolidColorBrush x:Key="CardShadowBrush" Color="{StaticResource PastelCardShadow}" />
+    <SolidColorBrush x:Key="WhiteBrush" Color="White" />
+    <SolidColorBrush x:Key="BlackBrush" Color="Black" />
+
+    <!-- Card Style for Note -->
+    <Style x:Key="NoteCardBorder" TargetType="Border">
+        <Setter Property="Stroke" Value="{StaticResource BlackBrush}" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="Background" Value="{StaticResource PastelLightBlueBrush}" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="24"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Shadow">
+            <Setter.Value>
+                <Shadow Brush="{StaticResource CardShadowBrush}" Offset="0,6" Radius="16" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Padding" Value="14" />
+        <Setter Property="Margin" Value="14" />
+    </Style>
+
+    <!-- Note Title -->
+    <Style x:Key="NoteCardTitle" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsBold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="Margin" Value="0,0,0,8"/>
+    </Style>
+
+    <!-- Note Date -->
+    <Style x:Key="NoteCardDate" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="TextColor" Value="#666"/>
+        <Setter Property="Margin" Value="0,0,0,8"/>
+    </Style>
+
+    <!-- Note Content -->
+    <Style x:Key="NoteCardText" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="TextColor" Value="#2E2E2E"/>
+    </Style>
+</ResourceDictionary>

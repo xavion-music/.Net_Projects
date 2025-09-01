@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Notes.Models"
+             xmlns:converters="clr-namespace:Notes.Converters"
+             x:Class="Notes.Views.NotePage"
+             Title="Note">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="16">
+            <Entry x:Name="TitleEntry" Placeholder="Title" Text="{Binding Title}" FontSize="20"/>
+            <Editor x:Name="ContentEditor" Placeholder="Type your note here..." Text="{Binding Text}" AutoSize="TextChanges" HeightRequest="120"/>
+            <Image x:Name="PhotoPreview" Source="{Binding PhotoPath}" HeightRequest="160" Aspect="AspectFill"
+                   IsVisible="{Binding PhotoPath, Converter={StaticResource NullToBoolConverter}}" Margin="0,6" />
+            <Button Text="Take Photo" Clicked="OnTakePhotoClicked" CornerRadius="10" BackgroundColor="#a58df5" TextColor="Black"/>
+            <Button Text="Save" Clicked="OnSaveClicked" BackgroundColor="#512BD4" TextColor="White" CornerRadius="12"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

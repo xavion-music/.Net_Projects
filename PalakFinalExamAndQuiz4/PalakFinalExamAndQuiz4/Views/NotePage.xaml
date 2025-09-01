@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:KarandeepFinalExam.Models"
+             x:Class="KarandeepFinalExam.Views.NotePage"
+             Title="Note"
+             x:DataType="models:Note">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="15">
+
+            <Frame HasShadow="True" BorderColor="LightGray" CornerRadius="12" Padding="0">
+                <Image x:Name="NoteImage"
+                       Aspect="AspectFill"
+                       HeightRequest="200"
+                       Source="{Binding ImagePath}"
+                       IsVisible="{Binding ImagePath, Converter={StaticResource NullToBoolConverter}}" />
+            </Frame>
+
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Take Photo" Clicked="TakePhoto_Clicked" />
+                <Button Text="Upload Image" Clicked="UploadPhoto_Clicked" />
+            </HorizontalStackLayout>
+
+            <Frame CornerRadius="8"
+                    BorderColor="LightGray"
+                    BackgroundColor="#FFFDFD"
+                    Padding="10"
+                    Margin="0,10">
+                <Editor x:Name="TextEditor"
+                    Placeholder="Enter your note"
+                    Text="{Binding Text}"
+                    AutoSize="TextChanges"
+                    HeightRequest="130"
+                    BackgroundColor="Transparent"
+                    FontSize="16"
+                    FontFamily="Georgia"
+                    TextColor="Black" />
+            </Frame>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Button Text="Save"
+                        BackgroundColor="#4CAF50"
+                        ImageSource="save_icon.png"
+                        CornerRadius="10"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        Clicked="SaveButton_Clicked" />
+
+                <Button Grid.Column="1"
+                        Text="Delete"
+                        ImageSource="delete_icon.png"
+                        BackgroundColor="#F44336"
+                        CornerRadius="10"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        Clicked="DeleteButton_Clicked" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

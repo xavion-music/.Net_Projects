@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Pastel Dreamland Adventure Palette -->
+    <Color x:Key="PastelPurple">#CDB4DB</Color>
+    <Color x:Key="PastelPink">#FFC8DD</Color>
+    <Color x:Key="PastelLightPink">#FFAFCC</Color>
+    <Color x:Key="PastelLightBlue">#BDE0FE</Color>
+    <Color x:Key="PastelBlue">#A2D2FF</Color>
+    <Color x:Key="PastelCardShadow">#44000000</Color>
+</ResourceDictionary>
