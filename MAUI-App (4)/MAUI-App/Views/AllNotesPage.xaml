@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.AllNotesPage"
+             xmlns:models="clr-namespace:Notes.Models"
+             Title="Notes"
+             BackgroundColor="{DynamicResource Background}">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*" Padding="0,24,0,0">
+            <Button Text="Add Note"
+                    Clicked="OnAddNoteClicked"
+                    BackgroundColor="{DynamicResource PastelPurple}"
+                    TextColor="{DynamicResource White}"
+                    FontFamily="PoppinsBold"
+                    FontSize="20"
+                    Margin="16,0,16,12"
+                    HeightRequest="60"
+                    CornerRadius="16"/>
+            <CollectionView Grid.Row="1"
+                            ItemsSource="{x:Static notes:App.NotesCollection}"
+                            Margin="8,0"
+                            SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Note">
+                        <Border Style="{StaticResource NoteCard}"
+                                BackgroundColor="{Binding ., Converter={StaticResource NoteCardColorConverter}}">
+                            <StackLayout>
+                                <Label Style="{StaticResource NoteCardTitle}" Text="{Binding Title}"/>
+                                <Label Style="{StaticResource NoteCardBody}" Text="{Binding Text}" MaxLines="2"/>
+                                <Image Source="{Binding PhotoPath}" HeightRequest="120" Aspect="AspectFill"
+                                       IsVisible="{Binding PhotoPath, Converter={StaticResource NullToBoolConverter}}"
+                                       Margin="0,8,0,0"/>
+                                <Label FontFamily="PoppinsRegular" FontSize="13"
+                                       TextColor="{DynamicResource Gray}" Margin="0,4,0,0"
+                                       Text="{Binding Date, StringFormat='{0:MMM dd, yyyy HH:mm}'}"/>
+                                <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,8,0,0">
+                                    <Button Text="Edit" Clicked="OnEditNoteClicked" CommandParameter="{Binding .}" FontFamily="PoppinsRegular" FontSize="14" BackgroundColor="{DynamicResource PastelRose}" CornerRadius="8"/>
+                                    <Button Text="Delete" Clicked="OnDeleteNoteClicked" CommandParameter="{Binding .}" FontFamily="PoppinsRegular" FontSize="14" BackgroundColor="IndianRed" TextColor="White" CornerRadius="8"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

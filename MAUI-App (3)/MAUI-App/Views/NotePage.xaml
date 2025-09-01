@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Notes.Views.NotePage"
+    BackgroundColor="{StaticResource PastelPink}">
+    <ScrollView>
+        <VerticalStackLayout Padding="22,18">
+            <Label Text="Edit Note"
+                   FontFamily="PoppinsBold"
+                   FontSize="28"
+                   TextColor="Black"
+                   Margin="0,0,0,12"/>
+
+            <Entry x:Name="TitleEntry"
+                   Text="{Binding Title}"
+                   Placeholder="Title"
+                   FontFamily="PoppinsSemiBold"
+                   FontSize="22"
+                   TextColor="Black"
+                   BackgroundColor="{StaticResource PastelPurple}"
+                   Margin="0,0,0,8"
+                   HeightRequest="46"
+                   CornerRadius="12"/>
+
+            <Editor x:Name="TextEditor"
+                    Text="{Binding Text}"
+                    Placeholder="Type your note here..."
+                    FontFamily="PoppinsRegular"
+                    FontSize="17"
+                    TextColor="Black"
+                    BackgroundColor="{StaticResource PastelLightBlue}"
+                    Margin="0,0,0,16"
+                    HeightRequest="120"
+                    CornerRadius="14"/>
+
+            <!-- Photo Preview (Rounded) -->
+            <Border StrokeThickness="0"
+                    Stroke="Transparent"
+                    BackgroundColor="Transparent"
+                    HeightRequest="200"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"
+                    Margin="0,8,0,8">
+                <Image Source="{Binding PhotoPath}"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       Aspect="AspectFill"/>
+                <Border.Clip>
+                    <EllipseGeometry
+                        Center="100,100"
+                        RadiusX="100"
+                        RadiusY="100"/>
+                </Border.Clip>
+            </Border>
+
+            <Button Text="Take Photo"
+                    Command="{Binding TakePhotoCommand}"
+                    BackgroundColor="{StaticResource PastelBlue}"
+                    TextColor="Black"
+                    FontFamily="PoppinsSemiBold"
+                    FontSize="18"
+                    CornerRadius="18"
+                    Margin="0,4,0,4"
+                    HeightRequest="48"/>
+
+            <Button Text="Save"
+                    Command="{Binding SaveNoteCommand}"
+                    BackgroundColor="{StaticResource PastelPurple}"
+                    TextColor="Black"
+                    FontFamily="PoppinsBold"
+                    FontSize="20"
+                    CornerRadius="18"
+                    Margin="0,14,0,0"
+                    HeightRequest="54"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

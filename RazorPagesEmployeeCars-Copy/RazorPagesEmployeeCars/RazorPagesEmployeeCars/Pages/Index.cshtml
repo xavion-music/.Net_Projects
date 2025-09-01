@@ -1,0 +1,33 @@
+﻿@page
+@model RazorPagesEmployeeCars.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+<h1>Employees Overview</h1>
+
+<p>
+    <a asp-page="/Employees/Index" class="btn btn-primary">Manage Employees</a> |
+    <a asp-page="/Cars/Index" class="btn btn-secondary">Manage Cars</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Cars</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model.Employees)
+        {
+            <tr>
+                <td>@emp.FirstName</td>
+                <td>@emp.LastName</td>
+                <td>@emp.Email</td>
+                <td>@(emp.Cars?.Count ?? 0)</td>
+            </tr>
+        }
+    </tbody>
+</table>

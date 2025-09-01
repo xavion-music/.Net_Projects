@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.NotePage"
+             Title="Note"
+             BackgroundColor="{DynamicResource Background}">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Padding="20,32">
+                <Entry Placeholder="Title"
+                       Text="{Binding note.Title}"
+                       FontFamily="PoppinsBold"
+                       FontSize="22"
+                       TextColor="{DynamicResource CardText}"
+                       Margin="0,0,0,12"/>
+                <Editor Placeholder="Type your note here..."
+                        Text="{Binding note.Text}"
+                        FontFamily="PoppinsRegular"
+                        FontSize="16"
+                        TextColor="{DynamicResource CardText}"
+                        AutoSize="TextChanges"
+                        HeightRequest="120"/>
+                <Border BackgroundColor="{DynamicResource PastelBlue}" Margin="0,18,0,10" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 20">
+                    <Image Source="{Binding note.PhotoPath}" HeightRequest="180"
+                           Aspect="AspectFill"
+                           IsVisible="{Binding note.PhotoPath, Converter={StaticResource NullToBoolConverter}}"/>
+                </Border>
+                <Button Text="Take Photo"
+                        Clicked="OnTakePhotoClicked"
+                        FontFamily="PoppinsRegular"
+                        FontSize="16"
+                        Margin="0,0,0,10"
+                        BackgroundColor="{DynamicResource PastelLightBlue}"
+                        CornerRadius="12"/>
+                <Button Text="Save"
+                        Clicked="OnSaveNoteClicked"
+                        FontFamily="PoppinsBold"
+                        FontSize="20"
+                        BackgroundColor="{DynamicResource PastelPurple}"
+                        TextColor="White"
+                        CornerRadius="16"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

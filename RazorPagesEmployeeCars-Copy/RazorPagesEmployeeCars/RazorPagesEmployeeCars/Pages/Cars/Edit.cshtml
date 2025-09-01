@@ -1,0 +1,38 @@
+﻿@page
+@model RazorPagesEmployeeCars.Pages.Cars.EditModel
+@{
+    ViewData["Title"] = "Edit Car";
+}
+<h1>Edit Car</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Car.Id" />
+    <div class="form-group">
+        <label asp-for="Car.Make"></label>
+        <input asp-for="Car.Make" class="form-control" />
+        <span asp-validation-for="Car.Make" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Car.Model"></label>
+        <input asp-for="Car.Model" class="form-control" />
+        <span asp-validation-for="Car.Model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Car.Year"></label>
+        <input asp-for="Car.Year" class="form-control" />
+        <span asp-validation-for="Car.Year" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Car.LicensePlate"></label>
+        <input asp-for="Car.LicensePlate" class="form-control" />
+        <span asp-validation-for="Car.LicensePlate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Car.EmployeeId">Employee</label>
+        <select asp-for="Car.EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
+        <span asp-validation-for="Car.EmployeeId" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>

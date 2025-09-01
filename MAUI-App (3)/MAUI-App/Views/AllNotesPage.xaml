@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Notes.Views.AllNotesPage"
+    Title="Notes"
+    BackgroundColor="{StaticResource PastelBlue}">
+
+    <VerticalStackLayout Padding="20,10">
+        <Label Text="Notes"
+               FontFamily="PoppinsBold"
+               FontSize="32"
+               TextColor="Black"
+               Margin="0,10,0,20" />
+
+        <Button Text="Add Note"
+                Command="{Binding AddNoteCommand}"
+                BackgroundColor="{StaticResource PastelPurple}"
+                TextColor="Black"
+                FontFamily="PoppinsSemiBold"
+                HeightRequest="54"
+                CornerRadius="18"
+                Margin="0,0,0,24" />
+
+        <CollectionView ItemsSource="{Binding Notes}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="28"
+                           Padding="0"
+                           Margin="10"
+                           BackgroundColor="{Binding ., Converter={StaticResource NoteCardColorConverter}}">
+                        <VerticalStackLayout Padding="18">
+                            <!-- Rounded Photo -->
+                            <Border StrokeThickness="0"
+                                    Stroke="Transparent"
+                                    BackgroundColor="Transparent"
+                                    HeightRequest="120"
+                                    WidthRequest="120"
+                                    HorizontalOptions="Center">
+                                <Image Source="{Binding PhotoPath}"
+                                       HeightRequest="120"
+                                       WidthRequest="120"
+                                       Aspect="AspectFill"/>
+                                <Border.Clip>
+                                    <EllipseGeometry
+                                        Center="60,60"
+                                        RadiusX="60"
+                                        RadiusY="60"/>
+                                </Border.Clip>
+                            </Border>
+
+                            <!-- Note Title -->
+                            <Label Text="{Binding Title}"
+                                   FontFamily="PoppinsSemiBold"
+                                   FontSize="20"
+                                   TextColor="Black"
+                                   Margin="0,14,0,0"/>
+                            <!-- Note Body -->
+                            <Label Text="{Binding Text}"
+                                   FontFamily="PoppinsRegular"
+                                   FontSize="16"
+                                   TextColor="Black"
+                                   LineBreakMode="TailTruncation"
+                                   MaxLines="3"
+                                   Margin="0,3,0,0"/>
+                            <!-- Date -->
+                            <Label Text="{Binding Date, StringFormat='{}{0:MMM dd, yyyy h:mm tt}'}"
+                                   FontFamily="PoppinsLight"
+                                   FontSize="13"
+                                   TextColor="Black"
+                                   Margin="0,4,0,0"/>
+
+                            <HorizontalStackLayout Margin="0,8,0,0">
+                                <Button Text="View/Edit"
+                                        Command="{Binding BindingContext.EditNoteCommand, Source={x:Reference Name=Page}}"
+                                        CommandParameter="{Binding .}"
+                                        FontFamily="PoppinsSemiBold"
+                                        FontSize="15"
+                                        BackgroundColor="{StaticResource PastelBlue}"
+                                        TextColor="Black"
+                                        CornerRadius="10"
+                                        Padding="12,6"/>
+                                <Button Text="Delete"
+                                        Command="{Binding BindingContext.DeleteNoteCommand, Source={x:Reference Name=Page}}"
+                                        CommandParameter="{Binding .}"
+                                        FontFamily="PoppinsSemiBold"
+                                        FontSize="15"
+                                        BackgroundColor="#FF6161"
+                                        TextColor="White"
+                                        CornerRadius="10"
+                                        Padding="12,6"
+                                        Margin="10,0,0,0"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

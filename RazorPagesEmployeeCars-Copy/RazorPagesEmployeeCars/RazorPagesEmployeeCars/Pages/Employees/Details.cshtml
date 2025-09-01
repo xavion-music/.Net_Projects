@@ -1,0 +1,32 @@
+﻿@page
+@model RazorPagesEmployeeCars.Pages.Employees.DetailsModel
+@{
+    ViewData["Title"] = "Employee Details";
+}
+<h1>Employee Details</h1>
+
+<div>
+    <h4>@Model.Employee.FirstName @Model.Employee.LastName</h4>
+    <p>Email: @Model.Employee.Email</p>
+    <p>Phone: @Model.Employee.PhoneNumber</p>
+</div>
+
+<h5>Cars Owned:</h5>
+@if (Model.Employee.Cars != null && Model.Employee.Cars.Any())
+{
+    <ul>
+        @foreach (var car in Model.Employee.Cars)
+        {
+            <li>@car.Make @car.Model (@car.Year) - @car.LicensePlate</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No cars assigned.</p>
+}
+
+<p>
+    <a asp-page="Edit" asp-route-id="@Model.Employee.Id">Edit</a> |
+    <a asp-page="Index">Back to List</a>
+</p>
